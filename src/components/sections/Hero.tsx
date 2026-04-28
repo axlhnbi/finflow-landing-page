@@ -1,18 +1,26 @@
-import Image from "next/image"
+import Image from "next/image";
+import Button from "@/components/ui/Button";
+import { Download } from "lucide-react";
 
-export default function Hero(){
+export default function Hero() {
     return (
-        <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="hero" className="relative w-full h-[99vh] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image 
-                    src="/images/hero-bg.png" 
-                    alt="App Dashboard Background"
+                    src="/images/hero-bg-deskstop.png" 
+                    alt="App Dashboard Background Deskstop"
                     fill 
                     priority 
-                    quality={90} 
-                    className="object-cover object-center"
+                    className="object-cover object-center hidden md:block"
                 />
-                <div className="absolute inset-0 bg-black/40"></div>
+                 <Image 
+                    src="/images/hero-bg-mobile.png" 
+                    alt="App Dashboard Background Mobile"
+                    fill 
+                    priority 
+                    className="object-cover object-center md:hidden"
+                />
+                <div className="absolute inset-0 bg-black/60"></div>
             </div>
             <div className="realtive z-10 max-w-4xl px-4 text-center text-white">
                 <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-7xl">
@@ -21,13 +29,11 @@ export default function Hero(){
                 <p className="mb-8 text-lg text-gray-200 md:text-2xl">
                     Kelola pemasukan dan pengeluaran harian, monitor arus kas, dan atur transaksi secara cerdas
                 </p>
-                <div className="flex justify-center gap-4">
-                    <button className="rounded-full bg-blue-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
-                        Unduh Aplikasi
-                    </button>
-                    <button className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white/20">
-                        Pelajari Fitur
-                    </button>
+                <div className="flex flex-col md:flex-row justify-center gap-4">
+                    <Button size="lg" variant="primary" className="md:w-max w-full">
+                        < Download className="mr-2" /> Unduh Aplikasi
+                    </Button>
+                    <Button size="lg" variant="secondary" className="md:w-max w-full">Pelajari Fitur</Button>
                 </div>
             </div>
         </section>
