@@ -1,5 +1,4 @@
 import FeaturedCard from "../ui/FeatureCard"
-import { LineChart, Wallet, PieChart } from "lucide-react";
 
 export default function Features() {
     return (
@@ -9,17 +8,17 @@ export default function Features() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeaturedCard
-                    icon={LineChart}
+                    imageUrl="/images/featurec1.webp"
                     title="Lacak Transaksi Harian"
                     description="Kelola pemasukan dan pengeluaran harian dengan antarmuka yang intuitif dan cepat."
                 />
                 <FeaturedCard
-                    icon={Wallet}
+                    imageUrl="/images/featurec2.webp"
                     title="Arus Kas Real-time"
                     description="Monitor arus kas Anda secara langsung melalui grafik interaktif yang mudah dipahami."
                 />
                 <FeaturedCard
-                    icon={PieChart}
+                    imageUrl="/images/featurec3.webp"
                     title="Kategori Pintar"
                     description="Kategorisasi dompet dan transaksi secara otomatis untuk pengaturan keuangan yang lebih rapi."
                 />
