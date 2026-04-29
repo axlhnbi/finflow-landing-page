@@ -10,6 +10,7 @@ export default function Hero() {
                     src="/images/hero-bg-deskstop.png" 
                     alt="App Dashboard Background Deskstop"
                     fill 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority 
                     className="object-cover object-center hidden md:block"
                 />
@@ -17,6 +18,7 @@ export default function Hero() {
                     src="/images/hero-bg-mobile.png" 
                     alt="App Dashboard Background Mobile"
                     fill 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority 
                     className="object-cover object-center md:hidden"
                 />
