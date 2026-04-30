@@ -32,7 +32,7 @@ export default function Navbar() {
         <header 
             id="header"
             className={cn('fixed top-0 w-full z-50  bg-background backdrop-blur-md transition-all duration-300 ease-in-out',
-                isScroll && 'opacity-70'
+                isScroll && 'opacity-70 hover:opacity-100'
             )}>
             <div className="md:hidden flex px-4 py-4 items-center relative">
                 <button 
