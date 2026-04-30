@@ -1,4 +1,4 @@
-import { Mail, MousePointer } from "lucide-react";
+import { Mail } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/BrandIcons";
 
 export default function Footer() {
@@ -22,8 +22,8 @@ export default function Footer() {
                             <div className="flex items-center">
                                 <Mail className="mr-2" /> axlhnbi@gmail.com
                             </div>
-                            <div className="flex items-center">
-                                <LinkedinIcon className="mr-2" /> linkedin.com/axlhnbi
+                            <div className="flex">
+                                <LinkedinIcon className="mr-2" /> <div className="mt-0.5">linkedin.com/axlhnbi</div>
                             </div>
                         </div>
                     </div>
