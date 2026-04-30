@@ -6,7 +6,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="w-full overflow-hidden">
+        <footer id="footer" className="w-full overflow-hidden">
             <div className="bg-gray-950 px-10 pt-8 pb-10 text-gray-400">
                 <div className="block md:flex gap-2 mb-4 px-1 md:px-10">
                     <div className="w-xl mb-8 md:mb-0">

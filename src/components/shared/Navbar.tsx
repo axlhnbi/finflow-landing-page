@@ -11,6 +11,8 @@ export default function Navbar() {
     const [isScroll, setIsScroll] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
+    const closeMenu = () => setIsOpen(false);
+
     useEffect(() => {
         const handleScroll = () => {
             if(window.scrollY > 50){
@@ -25,11 +27,10 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);  
     }, []);
 
-    const closeMenu = () => setIsOpen(false);
-
 
     return(
         <header 
+            id="header"
             className={cn('fixed top-0 w-full z-50  bg-background backdrop-blur-md transition-all duration-300 ease-in-out',
                 isScroll && 'opacity-70'
             )}>
@@ -65,7 +66,7 @@ export default function Navbar() {
                     <nav className="space-x-3">
                         <Link href="/" className="p-2 hover:bg-gray-100 rounded-full">Beranda</Link>
                         <Link href="#features" className="p-2 hover:bg-gray-100 rounded-full">Fitur</Link>
-                        <Link href="#pricing" className="p-2 hover:bg-gray-100 rounded-full">Tampilan Aplikasi</Link>
+                        <Link href="#appscreen" className="p-2 hover:bg-gray-100 rounded-full">Tampilan Aplikasi</Link>
                     </nav>
                 </div>
                 <Link href="#pricing">
@@ -77,9 +78,9 @@ export default function Navbar() {
             {isOpen && (
                 <div className="md:hidden bg-background">
                     <nav className="flex flex-col px-6  pb-2 text-sm font-medium text-foreground">
-                        <Link href="/" className="p-2  hover:bg-gray-100 rounded-full">Beranda</Link>
-                        <Link href="/" className="p-2  hover:bg-gray-100 rounded-full">Fiture</Link>
-                        <Link href="/" className="p-2  hover:bg-gray-100 rounded-full">Tampilan Aplikasi</Link>
+                        <Link href="/" onClick={() => {closeMenu()}} className="p-2  hover:bg-gray-100 rounded-full">Beranda</Link>
+                        <Link href="#features" onClick={() => {closeMenu()}} className="p-2  hover:bg-gray-100 rounded-full">Fitur</Link>
+                        <Link href="#appscreen" onClick={() => {closeMenu()}} className="p-2  hover:bg-gray-100 rounded-full">Tampilan Aplikasi</Link>
                     </nav>
                 </div>
             )}

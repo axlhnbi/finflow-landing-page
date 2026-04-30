@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef, useEffect } from "react";
-import AppScreenCard from "../ui/AppScreenCard"
+import AppScreenCard from "../ui/AppScreenCard";
+import { APPSCREEN } from "@/data/appscreen";
+
 
 export default function AppScreen () {
 
@@ -31,19 +33,12 @@ export default function AppScreen () {
             <div
                 ref={scrollRef} 
                 className="flex md:grid md:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible pb-8 px-4 snap-x snap-mandatory scrollbar-hide"
-             >
-                <div className="min-w-[80%] sm:min-w-[45%] md:min-w-0 snap-center">
-                    <AppScreenCard imageUrl="/images/appc1.webp" />
-                </div>
-                <div className="min-w-[80%] sm:min-w-[45%] md:min-w-0 snap-center">
-                    <AppScreenCard imageUrl="/images/appc2.webp" />
-                </div>
-                <div className="min-w-[80%] sm:min-w-[45%] md:min-w-0 snap-center">
-                    <AppScreenCard imageUrl="/images/appc3.webp" />
-                </div>
-                <div className="min-w-[80%] sm:min-w-[45%] md:min-w-0 snap-center">
-                    <AppScreenCard imageUrl="/images/appc4.webp" />
-                </div>
+             >  
+                {APPSCREEN.map((screen, index) => (
+                    <div key={index} className="min-w-[80%] sm:min-w-[45%] md:min-w-0 snap-center">
+                        <AppScreenCard imageUrl={screen.imageUrl} />
+                    </div>
+                ))}
             </div>
         </section>
     )

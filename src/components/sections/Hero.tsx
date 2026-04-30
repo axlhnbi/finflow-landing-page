@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
+import { HERO } from "@/data/hero";
 import { Download } from "lucide-react";
 
 export default function Hero() {
@@ -7,7 +9,7 @@ export default function Hero() {
         <section id="hero" className="relative w-full h-[99vh] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image 
-                    src="/images/hero-bg-deskstop.png" 
+                    src={HERO.imageUrlDesktop}
                     alt="App Dashboard Background Deskstop"
                     fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -15,7 +17,7 @@ export default function Hero() {
                     className="object-cover object-center hidden md:block"
                 />
                  <Image 
-                    src="/images/hero-bg-mobile.png" 
+                    src={HERO.imageUrlMobile}
                     alt="App Dashboard Background Mobile"
                     fill 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -26,16 +28,18 @@ export default function Hero() {
             </div>
             <div className="realtive z-10 max-w-4xl px-4 text-center text-white">
                 <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-7xl">
-                    Kelola Keungan Anda Dengan FinFlow
+                    {HERO.title}
                 </h1>
                 <p className="mb-8 text-lg text-gray-200 md:text-2xl">
-                    Kelola pemasukan dan pengeluaran harian, monitor arus kas, dan atur transaksi secara cerdas
+                    {HERO.subtitle}
                 </p>
                 <div className="flex flex-col md:flex-row justify-center gap-4">
                     <Button size="lg" variant="primary" className="md:w-max w-full">
                         < Download className="mr-2" /> Unduh Aplikasi
                     </Button>
-                    <Button size="lg" variant="secondary" className="md:w-max w-full">Pelajari Fitur</Button>
+                    <Link href="#features">
+                        <Button size="lg" variant="secondary" className="md:w-max w-full">Pelajari Fitur</Button>                
+                    </Link>
                 </div>
             </div>
         </section>

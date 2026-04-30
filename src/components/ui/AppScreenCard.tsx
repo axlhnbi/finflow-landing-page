@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 interface AppScreenCardProps {
-    imageUrl: string
+    imageUrl: string;
 }
 
 export default function AppScreenCard({ imageUrl }: AppScreenCardProps) {
