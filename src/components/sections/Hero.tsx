@@ -26,11 +26,11 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-black/60"></div>
             </div>
-            <div className="realtive z-10 max-w-4xl px-4 text-center text-white">
+            <div className="realtive z-10 max-w-4xl px-4 text-center text-gray-300">
                 <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-7xl">
-                    {HERO.title}
+                    {HERO.title} <span className="text-white text-w-5xl underline">{HERO.appname}</span>
                 </h1>
-                <p className="mb-8 text-lg text-gray-200 md:text-2xl">
+                <p className="mb-8 text-lg text-gray-100 md:text-2xl">
                     {HERO.subtitle}
                 </p>
                 <div className="flex flex-col md:flex-row justify-center gap-4">
